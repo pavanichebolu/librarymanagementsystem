@@ -31,14 +31,20 @@
             </tr>
           </thead>
           <tbody>
+            {% block content %}
+            {% for b in book %}
             <tr>
+              
               <th scope="row">1</th>
+              <td>{{b.isbn}}</td>
+
+              <td>{{b.copies_available}}</td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
+              
             </tr>
-           
+            {% endfor %}
+            {% endblock %}
           </tbody>
         </table>
       <button onclick="location.href='/'" class="btn btn-primary">Back</button>
