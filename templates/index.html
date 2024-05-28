@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style>
+      body {
+        padding-top: 70px; /* Adjust padding to accommodate the fixed navbar */
+      }
+    </style>
+  </head>
+
+  <body>
+   {% include 'header.html' %}
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Readers Information</h5>
+              <p class="card-text">all readers informations here</p>
+              <a href="/books/" class="btn btn-primary">View Book</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Authors informations</h5>
+              <p class="card-text">All authors informations Here</p>
+              <a href="/authors/" class="btn btn-primary">View Author</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Loans Information</h5>
+              <p class="card-text">All loan Information Available Here</p>
+              <a href="/loans/" class="btn btn-primary">View Loan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Members Information</h5>
+              <p class="card-text">All members Information Available Here</p>
+              <a href="/members/" class="btn btn-primary">View Member</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Publisher Information</h5>
+              <p class="card-text">All publisher Information Available Here</p>
+              <a href="/publishers/" class="btn btn-primary">View Publisher</a>
+            </div>
+          </div>
+        </div>
+        
+    {% include 'footer.html' %}
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

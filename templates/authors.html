@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of All Authors</title>
+  <!-- Bootstrap CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  {% include 'header.html' %}
+
+
+
+  <div class="container mt-5">
+    <h3 class="text-left">Authors Information</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">author name</th>
+              <th scope="col">date of birth</th>
+              <th scope="col">date of death</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            {% block content %}
+            {% for  i in book  %}
+            <tr>
+           
+              <th scope="row">{{forloop.counter}}</th>
+              <td>{{i.first_name}}</td>
+              <td>{{i.last_name}}</td>
+              <td>{{i.date_of_birth}}</td>
+              <td>{{i.date_of_death}}</td>
+              <td><button onclick="location.href='/books/book/{{i.title}}'" class="btn btn-primary">Details</button></td>
+            </tr>
+            {% endfor %}
+            {% endblock content %}
+          </tbody>
+        </table>
+
+
+      </div>
+
+      <!-- Add more cards as needed for additional buses -->
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button onclick="location.href='/'" class="btn btn-primary">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+
+    <p class="text-center">© 2024 Developed by Chebolu Pavani
+    </p>
+
+  </div>
+
+
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
