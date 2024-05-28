@@ -25,19 +25,26 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th scope="col">return_date</th>
-              <th scope="col">due_date</th>
-              <th scope="col">loan_date</th>
+              <th scope="col">return date</th>
+              <th scope="col">due date</th>
+              <th scope="col">loan date</th>
             </tr>
           </thead>
           <tbody>
+            {% block content %}
+            {% for l in lo %}
             <tr>
-              <th scope="row">1</th>
+              
+              
+              <td>{{l.return_date}}</td>
+
+              <td>{{l.due_date}}</td>
+              <td>{{l.loan_date}}</td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              
             </tr>
+            {% endfor %}
+            {% endblock %}
            
           </tbody>
         </table>

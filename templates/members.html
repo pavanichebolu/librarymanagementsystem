@@ -34,13 +34,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+              {% block content %}
+            {% for b in mem %}
+            <tr>
+              
+              
+              <td>{{b.membership_date}}</td>
+
+              <td>{{b.address}}</td>
+              <td></td>
+              <td></td>
+              
+            </tr>
+            {% endfor %}
+            {% endblock %}
              
             </tbody>
           </table>

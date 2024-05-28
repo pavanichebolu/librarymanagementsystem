@@ -31,13 +31,20 @@
             </tr>
           </thead>
           <tbody>
+            {% block content %}
+            {% for b in pub %}
             <tr>
-              <th scope="row">1</th>
+              
+              
+              <td>{{b.name}}</td>
+
+              <td>{{b.address}}</td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
+              
             </tr>
+            {% endfor %}
+            {% endblock %}
            
           </tbody>
         </table>

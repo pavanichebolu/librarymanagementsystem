@@ -31,13 +31,20 @@
             </tr>
           </thead>
           <tbody>
+            {% block content %}
+            {% for a in authors %}
             <tr>
-              <th scope="row">1</th>
+              
+
+              <td>{{a.first_name}}</td>
+
+              <td>{{a.last_name}}</td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
+              
             </tr>
+            {% endfor %}
+            {% endblock %}
            
           </tbody>
         </table>

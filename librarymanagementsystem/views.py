@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from books.models import Book
-
+from authors.models import Author
+from publishers.models import Publisher
+from loans.models import Loan
+from members.models import Member
 
 
 def index(request):
@@ -12,17 +15,20 @@ def books(request):
     return render(request, "books.html" ,{'book': book})
     
 def authors(request):
-    
-    return render(request,"authors.html")
+    authors = Author.objects.all()
+    return render(request, "authors.html" ,{'authors': authors})
 
 def publishers(request):
-    return render(request,"publishers.html")
+    pub = Publisher.objects.all()
+    return render(request, "publishers.html" ,{'pub': pub})
 
 
 def loans(request):
-    return render(request,"loans.html")
+    lo = Loan.objects.all()
+    return render(request, "loans.html" ,{'lo': lo})
 
 
 
 def members(request):
-    return render(request,"members.html")
+    mem = Member.objects.all()
+    return render(request, "members.html" ,{'mem': mem})

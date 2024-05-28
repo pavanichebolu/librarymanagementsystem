@@ -2,8 +2,7 @@ from django.db import models
 
 # Create your models here.
 from datetime import date
-from books.models import Book
-from members.models import Member
+
 
 # Create your models here.
 class Loan(models.Model):
