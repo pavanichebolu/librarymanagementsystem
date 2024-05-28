@@ -1,49 +1,61 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>List of all Books</title>
-    <!-- Bootstrap CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-  </head>
 
-  <body>
-    {% include 'header.html' %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of All Books</title>
+  <!-- Bootstrap CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 
-    <div class="container mt-5">
-      <h1 class="text-left ">List of All Books</h1>
-      <div class="row">
-        {% block content %}
-          {% for i in book %}
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">{{ i.copies_available }}</h5>
-                  <p class="card-text">books title: {{ i.title }}</p>
-                  <p class="card-text">publisher name: {{ i.publisher }}</p>
-                  <a href="/books/book/{{ i.copies_available }}/" class="btn btn-primary">View Book</a>
-                </div>
-              </div>
-            </div>
-          {% endfor %}
-        {% endblock %}
+</head>
 
-        <!-- Add more cards as needed for additional buses -->
+<body>
+
+  {% include 'header.html' %}
+
+
+
+  <div class="container">
+    <h1 class="text-center mb-4">List of All Books Information</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">title</th>
+              <th scope="col">isbn</th>
+              <th scope="col">copies available</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+           
+          </tbody>
+        </table>
+      <button onclick="location.href='/'" class="btn btn-primary">Back</button>
+
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <button onclick="location.href='/'" class="btn btn-primary">Back</button>
-        </div>
-      </div>
+
+      <!-- Add more cards as needed for additional buses -->
     </div>
+  </div>
 
-    {% include 'footer.html' %}
+  {% include 'footer.html' %}
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  </body>
+
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
 </html>

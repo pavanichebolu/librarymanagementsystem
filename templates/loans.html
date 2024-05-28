@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>List of All Books </title>
+  <title>List of All Loaners</title>
   <!-- Bootstrap CSS -->
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'css/styles.css' %}" rel="stylesheet">
@@ -18,57 +18,38 @@
 
 
 
-  <div class="container mt-5">
-    <h3 class="text-left">loan Information</h3>
+  <div class="container">
+    <h1 class="text-center mb-4">List of All loaners Information</h1>
     <div class="row">
       <div class="col-md-12">
         <table class="table table-hover">
           <thead>
             <tr>
-              <th scope="col">loan.No</th>
-              <th scope="col">loan Name</th>
-              <th scope="col">author Name</th>
-              <th scope="col">Book Number</th>
-              <th scope="col">title name</th>
-              <th scope="col">Details</th>
+              <th scope="col">return_date</th>
+              <th scope="col">due_date</th>
+              <th scope="col">loan_date</th>
             </tr>
           </thead>
           <tbody>
-            {% block content %}
-            {% for  i in loan  %}
             <tr>
-           
-              <th scope="row">{{forloop.counter}}</th>
-              <td>{{i.book}}</td>
-              <td>{{i.member}}</td>
-              <td>{{i.loan_date}}</td>
-              <td>{{i.return_date}}</td>
-              <td>{{i.due_date}}</td>
-              <td><button onclick="location.href='/loan/loan/{{i.member}}'" class="btn btn-primary">Details</button></td>
+              <th scope="row">1</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
-            {% endfor %}
-            {% endblock content %}
+           
           </tbody>
         </table>
-
+      <button onclick="location.href='/'" class="btn btn-primary">Back</button>
 
       </div>
 
       <!-- Add more cards as needed for additional buses -->
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <button onclick="location.href='/'" class="btn btn-primary">Back</button>
-      </div>
-    </div>
   </div>
 
-  <div class="footer">
-
-    <p class="text-center">© 2024 Developed by Ch.pavani
-    </p>
-
-  </div>
+  {% include 'footer.html' %}
 
 
 

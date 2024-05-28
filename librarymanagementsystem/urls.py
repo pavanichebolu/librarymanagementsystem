@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.conf import  settings 
 
 
-from .views import index,books,authors,loans,members,addbook,publishers
+from .views import index,books,authors,loans,members,publishers
 
 
 urlpatterns = [
@@ -13,13 +13,12 @@ urlpatterns = [
     path('books/', books, name='books'),
     
     path('authors/', authors, name='authors'),
-    path('loans/', include('loans.urls')),
+    path('loans/', loans , name='loans'),
     path('members/', members, name='members'),
-    path('addbook/', addbook, name='addbook'),
+    
     path('publishers/', publishers, name='publishers'),
     
-    path('books/', include('books.urls')),
-
+    
    
     # re_path(r'^.*$', index, name='index')
    
