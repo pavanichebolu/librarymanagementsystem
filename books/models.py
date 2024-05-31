@@ -1,8 +1,7 @@
 from django.db import models
 
 # Create your models here.
-from authors.models import Author
-from publishers.models import Publisher
+
 
 # Create your models here.
 class Book(models.Model):

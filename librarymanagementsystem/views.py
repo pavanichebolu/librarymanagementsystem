@@ -32,3 +32,7 @@ def loans(request):
 def members(request):
     mem = Member.objects.all()
     return render(request, "members.html" ,{'mem': mem})
+
+def forms(request):
+    # Your view logic here
+    return render(request, 'book_form.html')
