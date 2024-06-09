@@ -9,7 +9,7 @@ class Book(models.Model):
     
     isbn = models.CharField(max_length=13, unique=True)
     copies_available = models.PositiveIntegerField(default=1)
+   
 
-
-    def _str_(self):
+    def  __str__(self):
         return self.title

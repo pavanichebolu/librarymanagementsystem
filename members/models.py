@@ -10,4 +10,4 @@ class Member(models.Model):
     address = models.TextField()
 
     def _str_(self):
-        return self.user.username
+        return self.address
